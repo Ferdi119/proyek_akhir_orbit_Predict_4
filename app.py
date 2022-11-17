@@ -18,8 +18,35 @@ from tensorflow.keras.layers import Conv2D, MaxPooling2D, \
     Flatten, Dense, Activation, Dropout, LeakyReLU
 from PIL import Image
 from fungsi import make_model
+from tensorflow.keras.utils import load_img, img_to_array
+import tensorflow as ts
+
+
+def PredGambar(file_gmbr):
+    file = file_gmbr
+    gmbr_array = np.asarray(file)
+    gmbr_array = gmbr_array*(1/225)
+    gmbr_input = tf.reshape(gmbr_array, shape=[1, 150, 150, 3])
+
+    predik_array = model.predict(gmbr_input)[0]
+
+    df = pd.DataFrame(predik_array)
+    df = df.rename({0: 'NilaiKemiripan'}, axis='columns')
+    Kualitas = ['AyamSegar', 'AyamTiren']
+    df['Kelas'] = Kualitas
+    df = df[['Kelas', 'NilaiKemiripan']]
+
+    predik_kelas = np.argmax(model.predict(gmbr_input))
+
+    if predik_kelas == 0:
+        predik_Kualitas = 'AyamSegar'
+    else:
+        predik_Kualitas = 'AyamTiren'
+
+    return predik_Kualitas, df
 
 # =[Variabel Global]=============================
+
 
 app = Flask(__name__, static_url_path='/static')
 
@@ -69,25 +96,15 @@ def apiDeteksi():
                 app.config['UPLOAD_PATH'], filename))
 
             # Memuat Gambar
-            test_image = Image.open('.' + gambar_prediksi)
-
-            # Mengubah Ukuran Gambar
-            test_image_resized = test_image.resize((150, 150))
-
-            # Konversi Gambar ke Array
-            image_array = np.array(test_image_resized)
-            test_image_x = (image_array / 255) - 0.5
-            test_image_x = np.array([image_array])
+            lok = '.' + gambar_prediksi
+            gmbr = ts.keras.utils.load_img(lok, target_size=(150, 150))
+            x = ts.keras.utils.img_to_array(gmbr)
+            x = np.expand_dims(x, axis=0)
+            gmbr = np.vstack([x])
 
             # Prediksi Gambar
-            y_pred_test_single = model.predict(test_image_x)
-            y_pred_test_classes_single = np.argmax(y_pred_test_single, axis=1)
-            hasil_prediksi = cifar10_classes[y_pred_test_classes_single[0]]
-            # predik_kelas = np.argmax(model.predict(test_image_x))
-            # if predik_kelas == 0:
-            #     hasil_prediksi = 'Ayam Segar'
-            # else:
-            #     hasil_prediksi = 'Ayam Tiren'
+            kelas, df = PredGambar(gmbr)
+            hasil_prediksi = kelas
 
             # Return hasil prediksi dengan format JSON
             return jsonify({
@@ -101,7 +118,7 @@ def apiDeteksi():
                 "prediksi": hasil_prediksi,
                 "gambar_prediksi": gambar_prediksi
             })
-
+            
 # =[Main]========================================
 
 
@@ -109,7 +126,7 @@ if __name__ == '__main__':
 
     # Load model yang telah ditraining
     model = make_model()
-    model.load_weights("AyamDenseNet201-DanielMrnth.h5")
+    model.load_weights("AyamDenseNet201-DanielMrnth_2.h5")
     # model.load_weights("model_cifar10_cnn_tf.h5")
 
     # Run Flask di localhost
