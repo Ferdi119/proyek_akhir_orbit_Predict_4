@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>YOLOV5 Real Time Inference</title>
+    <style>
+        .corner {
+            border-radius: 25px;
+            border: 5px solid #212aad;
+            padding: 0px;
+            width: 60%;
+            height: auto;
+            text-align: center;
+        }
+
+        .video-container {
+            justify-content: center;
+            text-align: center;
+            height: 100%;
+            /*border: 1px solid black;*/
+        }
+
+        .navbar {
+            overflow: hidden;
+            background-color: #800080;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .navbar a {
+            float: left;
+            font-size: 16px;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+
+            <!-- Logo -->
+            <div class="navbar-header">
+                <img src={{ url_for('static', filename='/images/orbit_logo.jpg' ) }} alt="Orbit Logo" width="50"
+                    height="50" align="left">
+            </div>
+
+            <!-- Daftar Halaman -->
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{{url_for('beranda')}}">Kembali</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <div class="row" style="text-align: center; width:100%;">
+            <img src={{ url_for('static', filename='/images/Keluarga-ayam.JPG' ) }}
+                style="width:40px; position:relative; left: -10px; display:inline-block;"></img>
+            <h1 style="text-align: center; display:inline-block;">Deteksi Ayam Segar dan Ayam Tiren</h1>
+            </img>
+        </div>
+    </div>
+
+    <div class="video-container">
+        <img src="{{ url_for('video') }}" class="corner"></img>
+        <!--<img src="../static/pytorch.png" class="corner"></img>-->
+        <!--<img src="{{ url_for('video') }}" width="50%"/>-->
+    </div>
+</body>
+
+</html>

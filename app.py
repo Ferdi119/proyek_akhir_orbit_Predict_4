@@ -7,7 +7,7 @@
 
 # =[Modules dan Packages]========================
 
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, redirect, Response
 from werkzeug.utils import secure_filename
 import pandas as pd
 import numpy as np
@@ -21,6 +21,74 @@ from fungsi import make_model
 from tensorflow.keras.utils import load_img, img_to_array
 import tensorflow as ts
 
+import argparse
+import io
+from PIL import Image
+import cv2
+import torch
+
+model_yolo = torch.hub.load("ultralytics/yolov5", "custom", path = "./best.pt", force_reload=True)
+from io import BytesIO
+
+def gen():
+    cap=cv2.VideoCapture(0)
+    # Read until video is completed
+    while(cap.isOpened()):
+        
+        # Capture frame-by-fram ## read the camera frame
+        success, frame = cap.read()
+        if success == True:
+
+            ret,buffer=cv2.imencode('.jpg',frame)
+            frame=buffer.tobytes()
+            
+            #print(type(frame))
+
+            img = Image.open(io.BytesIO(frame))
+            results = model_yolo(img, size=640)
+            #print(results)
+            #print(results.pandas().xyxy[0])
+            #results.render()  # updates results.imgs with boxes and labels
+            results.print()  # print results to screen
+            #results.show() 
+            #print(results.imgs)
+            #print(type(img))
+            #print(results)
+            #plt.imshow(np.squeeze(results.render()))
+            #print(type(img))
+            #print(img.mode)
+            
+            #convert remove single-dimensional entries from the shape of an array
+            img = np.squeeze(results.render()) #RGB
+            # read image as BGR
+            img_BGR = cv2.cvtColor(img, cv2.COLOR_RGB2BGR) #BGR
+
+            #print(type(img))
+            #print(img.shape)
+            #frame = img
+            #ret,buffer=cv2.imencode('.jpg',img)
+            #frame=buffer.tobytes()
+            #print(type(frame))
+            #for img in results.imgs:
+                #img = Image.fromarray(img)
+            #ret,img=cv2.imencode('.jpg',img)
+            #img=img.tobytes()
+
+            #encode output image to bytes
+            #img = cv2.imencode('.jpg', img)[1].tobytes()
+            #print(type(img))
+        else:
+            break
+        #print(cv2.imencode('.jpg', img)[1])
+
+        #print(b)
+        #frame = img_byte_arr
+
+        # Encode BGR image to bytes so that cv2 will convert to RGB
+        frame = cv2.imencode('.jpg', img_BGR)[1].tobytes()
+        #print(frame)
+        
+        yield(b'--frame\r\n'b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
 
 def PredGambar(file_gmbr):
     file = file_gmbr
@@ -66,6 +134,10 @@ cifar10_classes = ["AyamSegar", "AyamTiren"]
 
 @app.route("/")
 def beranda():
+    return render_template('index.html')
+
+@app.route("/beranda")
+def beranda_2():
     return render_template('index.html')
 
 # [Routing untuk API]
@@ -118,11 +190,25 @@ def apiDeteksi():
                 "prediksi": hasil_prediksi,
                 "gambar_prediksi": gambar_prediksi
             })
+@app.route('/video')
+def video():
+    """Video streaming route. Put this in the src attribute of an img tag."""
+
+    return Response(gen(),
+                        mimetype='multipart/x-mixed-replace; boundary=frame')
+
+@app.route('/objectDetection')
+def objectDetection():
+    return render_template('detection.html')
             
+
 # =[Main]========================================
 
 
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description="Flask app exposing yolov5 models")
+    parser.add_argument("--port", default=5000, type=int, help="port number")
+    args = parser.parse_args()
 
     # Load model yang telah ditraining
     model = make_model()
