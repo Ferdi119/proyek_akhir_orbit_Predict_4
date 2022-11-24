@@ -1,2 +1,2 @@
 Link model DenseNet201: 
-https://drive.google.com/file/d/1v9MmQ_IJI7BCeH5TZ7INuH4Pl6SLMYwe/view
+https://drive.google.com/drive/folders/1OT8TcacpwkqJDqAdgA58IWsZgb8nli1I?usp=share_link
