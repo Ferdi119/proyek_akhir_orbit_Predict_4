@@ -1,0 +1,60 @@
+	/*
+  	Flaticon icon font: Flaticon
+  	Creation date: 18/01/2020 09:26
+  	*/
+
+@font-face {
+  font-family: "Flaticon";
+  src: url("../fonts/Flaticon.eot");
+  src: url("../fonts/Flaticond41d.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/Flaticon.woff") format("woff"),
+       url("../fonts/Flaticon.ttf") format("truetype"),
+       url("../fonts/Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("../fonts/Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {
+    font-family: Flaticon;
+    font-size: 50px;
+    font-style: normal;
+}
+
+.flaticon-idea:before { content: "\f100"; }
+.flaticon-artist:before { content: "\f101"; }
+.flaticon-files-and-folders:before { content: "\f102"; }
+.flaticon-quotes:before { content: "\f103"; }
+.flaticon-circular:before { content: "\f104"; }
+.flaticon-play:before { content: "\f105"; }
+.flaticon-heart:before { content: "\f106"; }
+.flaticon-time:before { content: "\f107"; }
+.flaticon-lung:before { content: "\f108"; }
+.flaticon-heart-1:before { content: "\f109"; }
+.flaticon-bone:before { content: "\f10a"; }
+.flaticon-scalpel:before { content: "\f10b"; }
+.flaticon-drug:before { content: "\f10c"; }
+.flaticon-accident:before { content: "\f10d"; }
+.flaticon-left-chevron:before { content: "\f10e"; }
+.flaticon-icon-60758:before { content: "\f10f"; }
+.flaticon-worldwide:before { content: "\f110"; }
+.flaticon-mail:before { content: "\f111"; }
+.flaticon-phone:before { content: "\f112"; }
+.flaticon-love:before { content: "\f113"; }
+.flaticon-man:before { content: "\f114"; }
+.flaticon-thief:before { content: "\f115"; }
+.flaticon-school:before { content: "\f116"; }
+.flaticon-house:before { content: "\f117"; }
+.flaticon-button:before { content: "\f118"; }
+.flaticon-left-quote:before { content: "\f119"; }
+.flaticon-right-quote:before { content: "\f11a"; }
+.flaticon-search:before { content: "\f11b"; }
+.flaticon-calendar:before { content: "\f11c"; }
+.flaticon-heart-2:before { content: "\f11d"; }

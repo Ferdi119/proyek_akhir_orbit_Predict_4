@@ -1,174 +1,501 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<!-- Judul Halaman -->
-	<title>Orbit Future Academy</title>
-	
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
-	<!-- Icon -->
-	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
-	
-	<!-- CSS -->
-	<link rel="stylesheet" href={{ url_for('static', filename='/css/bootstrap.min.css') }} type="text/css">
-	<link rel="stylesheet" href={{ url_for('static', filename='/css/client_side.css') }}  type="text/css">
-	
-	<!-- JavaScript -->
-	<script src={{ url_for('static', filename='/js/jquery_3.6.0.min.js') }} ></script>
-	<script src={{ url_for('static', filename='/js/bootstrap_3.4.1.min.js') }} ></script>
-</head>
+  <!-- Mirrored from wpocean.com/html/tf/folio-live/folio/index-8.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 21 Nov 2022 07:41:44 GMT -->
+  <head>
+    <!-- copy an header Orbit Upload -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Icon -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='8pm logo.png') }}">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href={{ url_for('static', filename='/css/bootstrap.min.css') }} type="text/css">
+    <link rel="stylesheet" href={{ url_for('static', filename='/css/client_side.css') }}  type="text/css">
+    
+    <!-- JavaScript -->
+    <script src={{ url_for('static', filename='/js/jquery_3.6.0.min.js') }} ></script>
+    <script src={{ url_for('static', filename='/js/bootstrap_3.4.1.min.js') }} ></script>
+    <!-- end copy an header Orbit -->
 
-<body id="halamanku" data-spy="scroll" data-target=".navbar" data-offset="60">
 
-	<!-- Navigation Bar -->
-	<nav class="navbar navbar-default navbar-fixed-top">
-		<div class="container">
-			
-			<!-- Logo -->
-			<div class="navbar-header">
-				<img src={{ url_for('static', filename='/images/orbit_logo.jpg') }} alt="Orbit Logo" 
-				width="50" height="50" align="left">
-				<a class="navbar-brand" href="#halamanku">&#160; Orbit Future Academy</a>
-			</div>
-			
-			<!-- Daftar Halaman -->
-			<div class="collapse navbar-collapse" id="myNavbar">
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#informasi">INFORMASI</a></li>
-					<li><a href="#aplikasi">APLIKASI</a></li>
-					<li><a href="#anggotaKelompok">ANGGOTA KELOMPOK</a></li>
-					<li><a href="{{url_for('objectDetection')}}">OBJECT DETECTION</a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
+    <!-- copyan header Orbit Deteksi -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <!-- copyan header Orbit Deteksi -->
 
-	<!-- Bagian Halaman (Informasi) -->
-	<div id="informasi" class="container-fluid">
-		<br>
-		<br>
+    <!-- Meta Tags -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="wpoceans" />
+    <!-- Page Title -->
+    <title>SI-Dea by 8pm</title>
+    <!-- Icon fonts -->
+
+    <link href="static/css/themify-icons.css" rel="stylesheet" />
+    <link href="static/css/font-awesome.css" rel="stylesheet" />
+    <link href="static/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="static/css/flaticon.css" rel="stylesheet" />
+    <!-- Bootstrap core CSS -->
+    <!-- <link rel=”stylesheet” href=”static/css/bootstrap-responsive.css”> -->
+    <link href="static/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Plugins for this template -->
+    <link href="static/css/animate.css" rel="stylesheet" />
+    <link href="static/css/owl.carousel.css" rel="stylesheet" />
+    <link href="static/css/owl.theme.css" rel="stylesheet" />
+    <link href="static/css/slick.css" rel="stylesheet" />
+    <link href="static/css/slick-theme.css" rel="stylesheet" />
+    <link href="static/css/odometer-theme-default.css" rel="stylesheet" />
+    <link href="static/css/owl.transitions.css" rel="stylesheet" />
+    <link href="static/css/jquery.fancybox.css" rel="stylesheet" />
+    <link href="static/css/magnific-popup.css" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="static/css/style.css" rel="stylesheet" />
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="https://kit.fontawesome.com/8807988c91.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body id="home">
+    <!-- start page-wrapper -->
+    <div class="page-wrapper">
+      <!-- start preloader -->
+      <div class="preloader">
+        <div class="lds-ripple">
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <!-- end preloader -->
+      <!-- Start header -->
+      <header id="header" class="site-header header-style-2">
+        <nav class="navigation navbar navbar-default">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="open-btn">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="index.html"><img src="static/images/SiDEA logo.jpg" width="100px" height="100px" alt="" /></a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse navbar-right navigation-holder">
+              <button class="close-navbar"><i class="ti-close"></i></button>
+              <ul class="nav navbar-nav">
+                <li class="menu-item-has-children">
+                  <a href="#beranda">Beranda</a>
+                </li>
+                <li><a href="#About-Us">Tentang kami</a></li>
+                <li class="menu-item-has-children">
+                  <a href="javascript:void(0);">Features</a>
+                  <ul class="sub-menu">
+                    <li><a href="#ourfeatures">SiDEA Upload</a></li>
+                    <li><a href="#ourfeatures">SiDEA Detection</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <!-- end of nav-collapse -->
+            <!-- <div class="cart-search-contact">
+                        <a href="#" class="theme-btn-s2">Lets Talk</a>
+                    </div> -->
+          </div>
+          <!-- end of container -->
+        </nav>
+      </header>
+      <!-- end of header -->
+      <!-- start of hero -->
+      <section class="wpo-hero-style-7">
+        <div class="wpo-slide-wrap">
+          <div class="container">
+            <div class="row">
+              <div class="col col-lg-7 col-md-6 slide-caption" id="beranda">
+                <h2 class="wow fadeInLeftSlow" data-wow-delay="0.5s">Bingung dengan kualitas Ayam yang Anda beli di pasar?</h2>
+                <span class="wow fadeInUp" data-wow-delay="0.8s"
+                  >Dengan SiDEA Anda dapat mengetahui apakah daging ayang yang Anda beli di pasar adalah dagin ayam segar atau tiren. Menggunakan salah satu domain Artificial Intellegence yaitu Computer Vision, SiDEA berfungsi untuk
+                  membantu Anda menilai baik dengan foto atau real-time detection</span
+                >
+				
+                <div class="wow fadeInUp" data-wow-delay="1.0s">
+                  <div class="hero-btn">
+                    <a href="#ourfeatures" class="theme-btn">More About</a>
+                    <ul>
+                      <li class="video-holder">
+                        <a href="#ourfeatures" class="video-btn" data-type="iframe" tabindex="0"></a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="wpo-slide-right-img">
+            <div class="slide-img wow fadeInRightSlow" data-wow-duration="2000ms">
+              <img src="static/images/background img.jpg" width="525px" height="650px" alt="image" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- end of hero slider -->
+      <!-- emergencey-area start -->
+      <div class="emergencey-area">
+        <div class="container">
+          <div class="emergencey-wrap">
+            <div class="row">
+              <div class="col-lg-6 col-md-6">
+                <div class="emergencey-wpo-service">
+                  <div class="emergencey-icon">
+                    <i class="fa-solid fa-users fa-2xl"></i>
+                  </div>
+                  <div class="emergencey-text">
+                    <h2>User-Friendly App</h2>
+                    <p>Aplikasi ini ditujukan untuk semua masyarakat dari mulai anak kecil hingga dewasa</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                <div class="emergencey-hour">
+                  <div class="emergencey-icon">
+                    <i class="fa-solid fa-screwdriver-wrench fa-2xl"></i>
+                  </div>
+                  <div class="emergencey-text">
+                    <h2>No Additional Tools Needed</h2>
+                    <p>Aplikasi ini hanya memerlukan sebuah kamera (Laptop)</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- emergencey-area end -->
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Launch demo modal
+  </button> -->
+  
+  
+      <!-- Work-area start -->
+      <div class="work-area-2 section-padding">
+        <div class="container">
+          <div class="col-12">
+            <div class="section-title-2 text-center" id="ourfeatures">
+              <h2>Our App's Features</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 custom-grid">
+              <div class="work-wrap">
+                <div class="work-icon">
+                    <i class="fa-solid fa-images fa-2xl"></i>
+                </div>
+                <div class="work-content" id="sideaupload">
+                  <h2>SiDEA Upload</h2>
+                  <p>
+                    Aplikasi berbasis web digunakan untuk mengidentifikasi gambar kualitas daging ayam. Selanjutnya sistem mengeluarkan hasil identifikasi gambar dari inputan user dan menyalakan webcam untuk mendeteksi objek yang termasuk
+                    ke dalam daging ayam segar dan daging ayam tiren. Dataset dibuat dengan mengambil gambar ayam segar dan ayam tiren dengan menggunakan kamera smartphone.
+                  </p>
+                  <a href="#" data-toggle="modal" data-target="#ModalUpload">Coba Sekarang</a>
+                </div>
+              </div>
+            </div>
+            <!-- Modal upload -->
+  <div class="modal fade bd-example-modal-lg" id="ModalUpload" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Form Upload Gambar Prediksi</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
 		<div class="row">
 			<div class="col-sm-6">
-				<h2>CIC</h2>
-				<h4>Cifar-10 Image Classification</h4><br>
-				<p style="text-align: justify;text-justify: inter-word;">
-					Aplikasi ini dibuat khusus untuk mendeteksi sebuah objek dari gambar yang diberikan.
-					Adapun dataset yang digunakan untuk model klasifikasi gambar ini adalah CIFAR-10. 
-					Pada dataset CIFAR-1, terdapat 10 objek yang dapat diklasifikasi yaitu pesawat, mobil, burung, kucing,
-					rusa, anjing, katak, kuda, kapal, dan truk.
-					Untuk dapat menggunakan aplikasi ini, pengguna hanya mengunggah sebuah gambar dengan format 'JPG'. 
-					Hasil deteksi objek akan ditampilkan setelah pengguna mengunggah gambar tersebut.
-				</p>
-				<br>
-
-				<!-- Tombol Mulai -->
-				<nav id="navgo" class="navbar" style="background-color:#ffffff;z-index: 0;">
-					<ul class="nav nav-pills">
-						<li class="nav-item">
-							<a class="btn btn-default btn-lg" href="#aplikasi" style="background-color:#28ace5">Mulai</a>
-						</li>
-					</ul>
-				</nav>
-
-			</div>
-			
-			<div class="col-sm-6">
-				<br>
-				<br>
-				<!-- Gambar Deskripsi Aplikasi -->
-				<div align="center">
-					<img src={{ url_for('static', filename='/images/Keluarga-ayam.JPG') }} height="300" ></img>
-				</div>
+        <div class="modal-body">
+            <form style="">
+                <!-- Input atau Upload Gambar dari Pengguna -->
+				<h3 style="padding-bottom: 20px;">Silahkan input Gambar</h3>
+                <img src="static/images/ayam.jpg" width="300"  style="padding-bottom: 20px;" ></img>
+                    <input type="file" id="input_gambar" name="file">
+                </p>
+                </br>
+                <!-- Tombol Prediksi -->
+                <button type="submit" id="prediksi_submit" class="btn btn-default btn-lg">Prediksi</button>
+            </form>
+        </div>
+	</div>
+		<div class="col-sm-6">
+			<br>
+			<!-- Bagian Halaman untuk Hasil Prediksi -->
+			<div id="hasil_prediksi" style="padding-top: 0px;">
+				<!-- Hasil Prediksi akan ditampilkan di sini-->
 			</div>
 		</div>
-		<br>
 	</div>
+      </div>
+    </div>
+  </div>
 
+            <div class="col-lg-6 col-md-6 col-sm-6 custom-grid">
+              <div class="work-wrap">
+                <div class="work-icon">
+                    <i class="fa-sharp fa-solid fa-magnifying-glass fa-2xl"></i>
+                </div>
+                <div class="work-content" id="sideadetect">
+                  <h2>SiDEA Detection</h2>
+                  <p>Dengan menggunakan kamera dari laptop/smartphone, Anda dapat dengan langsung melakukan identifikasi pada daging yang Anda punya.</p>
+                  <a href="#" data-toggle="modal" data-target="#ModalDeteksi">Coba Sekarang</a>
+                </div>
 
-	<!-- Bagian Halaman (Aplikasi) -->
-	<div id="aplikasi" data-bs-spy="scroll" data-bs-target="#navgo" data-bs-offset="0" class="scrollspy-example" tabindex="0">
-		<br>
-		<br>
-		<div class="row">
-			<div class="col-sm-6">
-				</br>
-				<h3 style="margin-left: 50px;">Upload Gambar </h3>
-					<form style="margin-left: 50px;">
-						<!-- Input atau Upload Gambar dari Pengguna -->
-						<img src={{ url_for('static', filename='/images/ayam.JPG') }} width="300" ></img>
-						<p>silahkan upload sebuah gambar</p>
-						<p>
-							<input type="file" id="input_gambar" name="file">
-						</p>
-						</br>
-						<!-- Tombol Prediksi -->
-						<button type="submit" id="prediksi_submit" class="btn btn-default btn-lg">Prediksi</button>
-					</form>
-			</div>
-			<div class="col-sm-6">
-				<br>
-				<!-- Bagian Halaman untuk Hasil Prediksi -->
-				<div id="hasil_prediksi" align="center">
-					<!-- Hasil Prediksi akan ditampilkan di sini-->
-				</div>
-			</div>
-		</div>
-		</br>
-		</br>
-		</br>
-		</br>
-	</div>
+                <!-- Modal Deteksi-->
+  <div class="modal fade" id="ModalDeteksi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Deteksi Dengan Kamera</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="video-container">
+            <img src="{{ url_for('video') }}" class="corner"></img>
+            <!--<img src="../static/pytorch.png" class="corner"></img>-->
+            <!--<img src="{{ url_for('video') }}" width="50%"/>-->
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Work-area end -->
 
+      <!-- wpo-testimonial-area start -->
+      <div class="wpo-testimonial-area-6 section-padding">
+        <div class="container">
+          <div class="col-12">
+            <div class="section-title-2 text-center">
+              <h2>Contoh Output</h2>
+            </div>
+          </div>
+          <div class="wpo-testimonial-main">
+            <div class="testimonial-active owl-carousel">
+              <div class="wpo-testimonial-wrap">
+                <div class="wpo-testimonial-item">
+                  <div class="wpo-testimonial-content">
+                    <p>Ayam Segar dan Ayam Tiren dengan mengupload gambar</p>
+                    <center><img src="static/images/contoh ouput 1.jpg" style="height: 300px; width: 300px" alt="clinet" /></center>
+                    <div class="wpo-testimonial-item2">
+                      <div class="wpo-testimonial-thumb">
+                        <h4>SiDEA Upload</h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="wpo-testimonial-wrap">
+                <div class="wpo-testimonial-item">
+                  <div class="wpo-testimonial-content">
+                    <p>Ayam Segar dan Ayam Tiren dengan menggunakan real-time detection</p>
+                    <center><img src="static/images/contoh output 2.png" style="height: 300px; width: 300px" alt="clinet" /></center>
+                    <div class="wpo-testimonial-item2">
+                      <div class="wpo-testimonial-thumb">
+                        <h4>SiDEA Detection</h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- wpo-testimonial-area end -->
 
-	<!-- Bagian Halaman (Anggota Kelompok) -->
-	<div id="anggotaKelompok" class="container-fluid text-center">
-		<br>
-		<h2>ANGGOTA KELOMPOK</h2>
-		<h4>Tim Deployment dan Tim CV</h4>
-		<br>
-		<div class="row slideanim">
-			<div class="col-sm-4">
-				<span class="glyphicon glyphicon-user logo-small"></span>
-				<h4>BUDI</h4>
-				<p>Universitas Sumatera</p>
-			</div>
-			<div class="col-sm-4">
-				<span class="glyphicon glyphicon-user logo-small"></span>
-				<h4>AYU</h4>
-				<p>Universitas Jawa dan Bali</p>
-			</div>
-			<div class="col-sm-4">
-				<span class="glyphicon glyphicon-user logo-small"></span>
-				<h4>TONO</h4>
-				<p>Universitas Kalimantan</p>
-			</div>
-		</div>
-	    <br>
-	    <div class="row slideanim">
-			<div class="col-sm-6">
-				<span class="glyphicon glyphicon-user logo-small"></span>
-				<h4>PUTRA</h4>
-				<p>Universitas Sulawesi</p>
-			</div>
-			<div class="col-sm-6">
-				<span class="glyphicon glyphicon-user logo-small"></span>
-				<h4>PUTRI</h4>
-				<p>Universitas Kepulauan Nusa, Maluku dan Papua</p>
-			</div>
-	    </div>
-	</div>
+      <!-- wpo-client-area start -->
+      <div class="wpo-client-area2">
+        <div class="container">
+          <div class="wpo-client-item">
+            <div class="section-title-2 text-center" id="About-Us">
+              <h2>About Us</h2>
+            </div>
+            <div class="Gift-carousel owl-carousel justify-content:center">
+              <div class="col">
+                
+                <center><img src="static/images/foto profile daniel.jpg" style="height: 120px; width: 120px" alt="clinet" /></center>
+                <div class="emergencey-text">
+                  <center><h5>DANIEL MORANTHA</h5></center>
+                </div>
+                <div class="wpo-footer-social">
+                    <center><ul>
+                      <li>
+                        <a href="https://github.com/Danielmorantha"><i class="fa-brands fa-github"></i></a>
+                      </li>
+                      <li>
+                        <a href="https://youtube.com/channel/UCyKaSpkGfd66vZVCIOw4Hlw"><i class="fa-brands fa-youtube" style="color: red"></i></a>
+                      </li>
+                      <li>
+                        <a href="https://www.instagram.com/danielmrnth12/?hl=id"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                      </li>
+                    </ul></center>
+                  </div>
+              </div>
+              <div class="col">
+                <center><img src="static/images/foto profile fadhli.jpg" style="height: 120px; width: 120px" alt="clinet" /></center>
+                <div class="emergencey-text">
+                  <center><h5>Achmad Fadhli Satriadi</h5></center>
+                </div>
+                <div class="wpo-footer-social">
+                    <center><ul>
+                      <li>
+                        <a href="https://www.linkedin.com/in/achmad-fadhli-satriadi-540a75203/"><i class="fa-brands fa-linkedin"></i></a>
+                      </li>
+                      <li>
+                        <a href="https://open.spotify.com/user/thelezo?si=4ae77d6ec3f04d05"><i class="fa-brands fa-spotify" style="color: green;"></i></a>
+                      </li>
+                      <li>
+                        <a href="https://www.instagram.com/acfadhli/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                      </li>
+                    </ul></center>
+                  </div>
+              </div>
+              <div class="col">
+                <center><img src="static/images/foto profile farhan.jpg" style="height: 120px; width: 120px" alt="clinet" /></center>
+                <div class="emergencey-text">
+                  <center><h5>FARHAN RIYANDI</h5></center>
+                </div>
+                <div class="wpo-footer-social">
+                    <center><ul>
+                      <li>
+                        <a href="https://www.linkedin.com/in/farhan-riyandi-67b96b215"><i class="fa-brands fa-linkedin"></i></a>
+                      </li>
+                      <li>
+                        <a href="https://youtube.com/channel/UCaeR2hDddd9wA2GkbIcob8Q"><i class="fa-brands fa-youtube" style="color: red"></i></a>
+                      </li>
+                      
+                    </ul></center>
+                  </div>
+              </div>
+              <div class="col">
+                <center><img src="static/images/foto profile erni.jpg" style="height: 120px; width: 120px" alt="clinet" /></center>
+                <div class="emergencey-text">
+                  <center><h5>Erni Nuraini</h5></center>
+                </div>
+                <div class="wpo-footer-social">
+                    <center><ul>
+                      <li>
+                        <a href="http://www.linkedin.com/in/erninrna"><i class="fa-brands fa-linkedin"></i></a>
+                      </li>
+                      <li>
+                        <a href="https://www.youtube.com/@erninuraini4649"><i class="fa-brands fa-youtube" style="color: red"></i></a>
+                      </li>
+                      <li>
+                        <a href="http://instagram.com/erninrna"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                      </li>
+                    </ul></center>
+                  </div>
+              </div>
+              <div class="col">
+                <center><img src="static/images/foto profile ferdi.jpg" style="height: 120px; width: 120px" alt="clinet" /></center>
+                <div class="emergencey-text">
+                  <center><h5>FERDI MAULANA AKBAR</h5></center>
+                </div>
+                <div class="wpo-footer-social">
+                    <center><ul>
+                        <li>
+                            <a href="https://www.linkedin.com/in/ferdi-maulana-73a8aa255"><i class="fa-brands fa-linkedin"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://youtube.com/@ferdimaulanaakbar803"><i class="fa-brands fa-youtube" style="color: red"></i></a>
+                        </li>
+                      <li>
+                        <a href="https://www.instagram.com/ferd_maulana_and089/?funlid=EMnqZ2CH2ybl1bkn"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                      </li>
+                      <li>
+                        <a href="https://twitter.com/alanfmaulana107"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                      </li>
+                      
+                    </ul></center>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- wpo-client-area end -->
 
-	<!-- Footer -->
-	<footer class="container-fluid text-center">
-		<a href="#halamanku" title="To Top">
-			<span class="glyphicon glyphicon-chevron-up"></span>
-		</a>
-		<p>Orbit Future Academy <br> <a href="https://orbitfutureacademy.id/">orbitfutureacademy.id</a></p>
-	</footer>
-
-	<!-- JavaScript untuk Animasi Scroll dan Prediksi Model -->
+      <div class="wpo-footer-area3">
+        <div class="container">
+          <div class="wpo-footer-top">
+            <div class="row">
+              <div class="col-lg-2 col-md-2 col-sm-4 col-12">
+                <div class="footer-logo">
+                  <img src="static/images/Logo Orbit Future Academy.PNG" width="200px" height="200px" style="padding-bottom: 20px" alt="" />
+                </div>
+              </div>
+              <div class="col-lg-2 col-md-2 col-sm-4 col-12">
+                <div class="footer-logo"><img src="static/images/Logo Kampus Merdeka.png" width="150px" height="120px" style="padding-top: 30px" alt="" /></div>
+              </div>
+              <div class="col-lg-2 col-md-2 col-sm-4 col-12">
+                <div class="footer-logo"><img src="static/images/8pm logo.png" width="150px" height="120px" style="padding-top: 30px" alt="" /></div>
+              </div>
+              <!-- <div class="col-lg-6 col-md-6 col-sm-8 col-12">
+                <div class="wpo-footer-menu">
+                  <ul> 
+                    <li><a href="protfolio.html">Portfolio</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                  </ul>
+                </div>
+              </div> -->
+              <div class="col-lg-6 col-md-2 col-sm-4 col-12">
+                <!-- <div class="wpo-footer-social">
+                  <ul>
+                    <li>
+                      <a href="#"><i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    </li>
+                  </ul>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="wpo-footer-bottom">
+          <span>© 2022 8pm (Predict-4). All rights reserved</span>
+        </div>
+      </div>
+    </div>
+    <!-- All JavaScript files
+    ================================================== -->
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/owl.carousel.min.js"></script>
+    <script src="static/js/metisMenu.min.js"></script>
+    <!-- Plugins for this template -->
+    <script src="static/js/jquery-plugin-collection.js"></script>
+    <!-- Custom script for this template -->
+    <script src="static/js/script.js"></script>
 	<script  src={{ url_for('static', filename='/js/client_side.js') }}></script>
+  </body>
 
-</body>
+  <!-- Mirrored from wpocean.com/html/tf/folio-live/folio/index-8.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 21 Nov 2022 07:41:44 GMT -->
 </html>
